@@ -86,7 +86,7 @@ button.primary:hover { filter: brightness(1.08); }
         <span class="label" id="out-label">Jen e-maily</span>
         <span class="stats" id="out-stats"></span>
       </div>
-      <textarea id="out" readonly spellcheck="false"></textarea>
+      <textarea id="out" readonly spellcheck="false" placeholder="Tady se objeví jen e-maily, každá firma na svém řádku."></textarea>
       <div class="pane-foot">
         <button type="button" class="primary" id="copy">Zkopírovat e-maily</button>
         <span class="toast" id="toast" role="status" aria-live="polite"></span>
@@ -98,7 +98,6 @@ button.primary:hover { filter: brightness(1.08); }
 </div>
 
 <script>
-const SAMPLE = "Essential Embrocation\ninfo@herBio.cz\n\nCrestcom\nmanagement@crestcom.cz\n\nClifford\noffice@cliffordchanceprague.com\n\nAmadeus real estate\ninfo@amadeusrealestate.cz\n\nElite Punčochy\nelite@elite-cz.cz\n\nHenceforth\nhello@henceforth.com\n\nTusch\ninfo@tusch.cz\n\nTazneautocar\nobchod@tazneautocar.cz\n\nAmadeus\njan.bartak@amadeus.com;tomas.korbel@amadeus.com;\n\nGroag  / Conti\nmatas@conti.live;info@conti.live\n\nHydroizolace Miva\ninfo@hydroizolacemiva.cz\n\nAmadeus Fin\ninfo@amadeusfin.cz;saskova@amadeusfin.cz\n\nMaayadesign\ninfo@maayadesign.cz\n\nDivadlo Pohádka\nmarketa.javo@gmail.com\n\nChance \ninfo@chance.cz;marketa.svetlikova@chance.cz\n\nŘidičák.net\ninfo@ridicak.net\n\nAuto Enge\naneta.kosova@autodraft.cz\n\nDarren\ngaskova@darren.cz\n\nMp-kování\nmp@mp-kovani.cz\n\nCzechtrans\ninfo@czechtrans.info\n\nCommexim\nservice@commexim.com\n\nLevný domky zahrada\ninfo@levnydomkyzahrada.cz";
 const EMAIL = /[A-Z0-9._%+'\-]+@[A-Z0-9.\-]+\.[A-Z]{2,}/gi;
 const $in = document.getElementById('in');
 const $out = document.getElementById('out');
@@ -147,8 +146,8 @@ document.getElementById('paste-new').addEventListener('click', () => {
 $out.addEventListener('focus', () => $out.select());
 $in.addEventListener('input', render);
 
-$in.value = SAMPLE;
 render();
+$in.focus();
 </script>
 </body>
 </html>
